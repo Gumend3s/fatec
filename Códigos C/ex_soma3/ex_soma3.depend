@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1741964308 source:c:\users\gustavo.oliveira262\documents\ex_soma3\main.c
+	<stdio.h>
+	<stdlib.h>
+

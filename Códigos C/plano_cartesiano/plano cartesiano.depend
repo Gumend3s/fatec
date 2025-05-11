@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1741705812 source:h:\códigos c\plano cartesiano\main.c
+	<stdio.h>
+	<stdlib.h>
+

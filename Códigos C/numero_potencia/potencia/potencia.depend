@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1740152966 source:h:\códigos c\numero_potencia\potencia\main.c
+	<stdio.h>
+	<stdlib.h>
+

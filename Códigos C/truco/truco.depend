@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1741965790 source:c:\users\gustavo.oliveira262\documents\truco\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1742310888 source:h:\códigos c\truco\main.c
+	<stdio.h>
+	<stdlib.h>
+
