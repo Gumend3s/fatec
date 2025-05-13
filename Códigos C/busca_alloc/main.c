@@ -5,19 +5,17 @@
 int *iniVet(int *size, int *maxSize);
 void printVet(int *v, int size);
 int *addVet(int *v, int *size, int *maxSize, int e);
+int find(int *v, int size, int e);
+int *removeVet(int *v, int *size, int *maxSize, int e);
 
 int main() {
-    int size;
-    int maxSize;
-    int *vet;
-    int n;
-    int resposta;
-
+    int size, maxSize, *vet, n, resposta;
+    int i, busca;
     vet = iniVet(&size, &maxSize);
 
     printf("Quantos elementos você vai adicionar? ");
     scanf("%d", &n);
-    for(int i = 0; i < n; i++){
+    for(i = 0; i < n; i++){
         printf("Digite o elemento da posição %d: ", i);
         scanf("%d", &resposta);
         vet = addVet(vet, &size, &maxSize, resposta);
@@ -27,6 +25,21 @@ int main() {
 printf("[");
 printVet(vet, size);
 printf("]\n");
+
+    printf("Escolha um elemento para ser retirado do vetor: ");
+    scanf("%d", &resposta);
+    vet = removeVet(vet, &size, &maxSize, resposta);
+    printf("Escolha um elemento para ser retirado do vetor: ");
+    scanf("%d", &resposta);
+    vet = removeVet(vet, &size, &maxSize, resposta);
+    printf("Escolha um elemento para ser retirado do vetor: ");
+    scanf("%d", &resposta);
+    vet = removeVet(vet, &size, &maxSize, resposta);
+
+printf("[");
+printVet(vet, size);
+printf("]\n");
+printf("%d", maxSize);
 
 free(vet);
 return 0;
@@ -64,8 +77,41 @@ int *addVet(int *v, int *size, int *maxSize, int e) {
             return v;
         }
         v = temp;
+
     }
-    v[*size] = e;
-    (*size)++;
+    v[(*size)++] = e;
     return v;
 }
+
+int find(int *v, int size, int e){
+    int i;
+    for(i = 0; i < size; i++){
+        v[i];
+        if(v[i] == e){
+            return i;
+        }
+    }
+    return -1;
+}
+
+int *removeVet(int *v, int *size, int *maxSize, int e){
+    int i, novoVetor;
+    int n = find(v, *size, e);
+    for(i = n; i < *size; i++){
+        v[i] = v[i + 1];
+    }
+    (*size)--;
+
+    if(*size <= (*maxSize) / 4){
+        *maxSize = (*maxSize)/2;
+        novoVetor = realloc(v, (*maxSize) * sizeof(int));
+        v = novoVetor;
+    }
+    return v;
+}
+/*
+    localizar e no vetor
+    retirar e do vetor
+    puxar conteúdo
+    diminuir size
+*/
