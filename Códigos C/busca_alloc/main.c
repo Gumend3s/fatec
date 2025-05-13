@@ -29,12 +29,7 @@ printf("]\n");
     printf("Escolha um elemento para ser retirado do vetor: ");
     scanf("%d", &resposta);
     vet = removeVet(vet, &size, &maxSize, resposta);
-    printf("Escolha um elemento para ser retirado do vetor: ");
-    scanf("%d", &resposta);
-    vet = removeVet(vet, &size, &maxSize, resposta);
-    printf("Escolha um elemento para ser retirado do vetor: ");
-    scanf("%d", &resposta);
-    vet = removeVet(vet, &size, &maxSize, resposta);
+
 
 printf("[");
 printVet(vet, size);
@@ -97,12 +92,12 @@ int find(int *v, int size, int e){
 int *removeVet(int *v, int *size, int *maxSize, int e){
     int i, novoVetor;
     int n = find(v, *size, e);
+    (*size)--;
     for(i = n; i < *size; i++){
         v[i] = v[i + 1];
     }
-    (*size)--;
 
-    if(*size <= (*maxSize) / 4){
+    if(*size < (*maxSize) / 4 && *maxSize > 4){
         *maxSize = (*maxSize)/2;
         novoVetor = realloc(v, (*maxSize) * sizeof(int));
         v = novoVetor;

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1747150482 source:c:\users\felipe.alves33\documents\github\fatec\códigos c\busca_alloc\main.c
+	<stdio.h>
+	<stdlib.h>
+
