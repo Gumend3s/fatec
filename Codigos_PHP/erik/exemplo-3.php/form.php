@@ -4,11 +4,11 @@ $name = $_POST["name"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-echo "Nome:".$name;
+echo "<p> Nome:".$name."</p>";
 echo "<br>";
-echo "Email:".$email;
+echo "<p>Email:".$email."</p>";
 echo "<br>";
-echo "Senha:" . $password;
+echo "<p>Senha:" . $password."</p>";
 echo "<br>";
 
 ?>
