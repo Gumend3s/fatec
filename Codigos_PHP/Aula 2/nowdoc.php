@@ -1,9 +1,9 @@
 
 <?php 
-$str = <<<'EOD' 
-Exemplo de Texto 
+$str = 'EOD'; 
+/*Exemplo de Texto 
 Com multiplas linhas 
 utilizando o novo padrão NowDoc. 
-EOD;
+EOD;*/
 echo $str;
 ?>
