@@ -16,18 +16,21 @@
       else
         $r = $a/$b;        
     }
-   
     if($func) {
-    if($func == 'MC')
-    $memor = 0;
-    else if($func == 'MR')
-    $a = $a;
-    $memor = $a;
-    else if($func == 'M+')
+      if($func == 'MC'){
+        $memor = 0;
+      }
+      else if($func == 'MR'){
+        $a = $a;
+        $memor = $a;
+      }
+      else if($func == 'M+'){
         $r = $a + $b;
         $memor = $r;
-       else
+    }
+      else{
         $r = $b - $a;
         $memor = $r;
-        }    
+      }
+    }    
 ?>
