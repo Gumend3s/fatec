@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boletim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+            font-weight: normal;
+        }
+        
+        label {
+            display: block;
+            margin: 15px 0 5px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #555;
+        }
+        
+        .resultado {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            border-left: 3px solid #666;
+        }
+        
+        .imc {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>boletim</h1>
+    
+    <form method="POST" action="boletim.php">
+        <label>Nota P1:</label>
+        <input type="number" name="p1" step="0.1" required>
+        
+        <label>Nota Interdisciplinar 1:</label>
+        <input type="number" name="ai1" step="0.01" required>
+        
+        <label>Nota P2:</label>
+        <input type="number" name="p2" step="0.1" required>
+
+        <label>Nota Interdisciplinar 2:</label>
+        <input type="number" name="ai2" step="0.01" required>
+
+        <label>frequência:</label>
+        <input type="number" name="freq" step="0.01" placeholder="Ex: 80%" required>
+        
+        <button type="submit">Calcular</button>
+    </form>
+</body>
+</html>
