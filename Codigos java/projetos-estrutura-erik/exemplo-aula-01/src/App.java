@@ -15,7 +15,7 @@ public class App {
 
 abstract class Pessoa {
     private String nome;
-    private LocalDate data_nasci;
+    protected LocalDate data_nasci;
     
     public Pessoa(String nome, LocalDate data_nasci) {
         this.nome = nome;
