@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Combustível</title>
+    <title>Conversor de Moedas</title>
 </head>
 <body>
-    <label for="valor">Valor: </label>
-    <input type="number" id="valor" name="valor" step="0.01" required>
-    <br/>
-
-    <form method="post" action="combustivel.php">
+    <form method="post" action="converter_moedas.php">
+        <label for="valor">Valor: </label>
+        <input type="number" id="valor" name="valor" step="0.01" required>
+        <br>
+        
         <label for="inicial">De:</label>
             <select id="inicial" name="inicial">
-                <option value="real">Real</option>
-                <option value="dolar">Dolar</option>
-                <option value="euro">Euro</option>
-                <option value="libra">Libra</option>
+                <option value="1">Real</option>
+                <option value="0.18">Dolar</option>
+                <option value="0.16">Euro</option>
+                <option value="0.14">Libra</option>
             </select>
         <br>
 
         <label for="final">Para:</label>
             <select id="final" name="final">
-                <option value="dolar">Dolar</option>
-                <option value="euro">Euro</option>
-                <option value="libra">Libra</option>
-                <option value="real">Real</option>
+                <option value="0.18">Dolar</option>
+                <option value="0.16">Euro</option>
+                <option value="0.14">Libra</option>
+                <option value="1">Real</option>
             </select>
             <br>
 
