@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Combustível</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+            font-weight: normal;
+        }
+        
+        label {
+            display: block;
+            margin: 15px 0 5px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #555;
+        }
+        
+        .resultado {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            border-left: 3px solid #666;
+        }
+        
+        .imc {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcula Combustível</h1>
+    
+    <form method="POST" action="calculadora_combustivel.php">
+        <label>Preço do álcool por litro:</label>
+        <input type="number" name="alcool" step="0.1" placeholder="R$:" required>
+        
+        <label>Preço da gasolina por litro:</label>
+        <input type="number" name="gasolina" step="0.01" placeholder="R$:" required>
+        
+        <button type="submit">Calcular</button>
+    </form>
+     <script>
+        document.getElementById('fuelForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Limpar erros anteriores
+            document.getElementById('alcoolError').textContent = '';
+            document.getElementById('gasolinaError').textContent = '';
+            document.getElementById('result').innerHTML = '';
+            
+            // Obter valores
+            const alcool = document.getElementById('alcool').value;
+            const gasolina = document.getElementById('gasolina').value;
+            
+            let hasError = false;
+            
+            // Validar álcool
+            if (!alcool || isNaN(alcool) || parseFloat(alcool) <= 0) {
+                document.getElementById('alcoolError').textContent = 'Por favor, informe um valor numérico válido para o álcool.';
+                hasError = true;
+            }
+            
+            // Validar gasolina
+            if (!gasolina || isNaN(gasolina) || parseFloat(gasolina) <= 0) {
+                document.getElementById('gasolinaError').textContent = 'Por favor, informe um valor numérico válido para a gasolina.';
+                hasError = true;
+            }
+            
+        });
+    </script>
+</body>
+</html>
