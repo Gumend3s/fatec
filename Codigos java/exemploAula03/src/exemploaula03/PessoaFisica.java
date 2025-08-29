@@ -23,4 +23,11 @@ public class PessoaFisica extends Pessoa {
     public void setCPF(int CPF) {
         this.CPF = CPF;
     }
+    
+    public void mostrar() {
+        System.out.println("Nome: " +
+                this.getNome() +
+                "\nCPF: " +
+                this.getCPF());
+    }
 }
