@@ -23,4 +23,11 @@ public class Professor extends PessoaFisica {
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
+    
+    @Override
+    public void mostrar() {
+        super.mostrar();
+        System.out.println("Matricula: " +
+                this.getMatricula());
+    }
 }

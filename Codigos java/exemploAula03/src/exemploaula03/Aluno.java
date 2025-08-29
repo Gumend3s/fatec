@@ -11,6 +11,11 @@ package exemploaula03;
 public class Aluno extends PessoaFisica {
     private int RA;
     
+    public Aluno(String nome, int CPF) {
+        super(nome, CPF);
+        this.RA = -1;
+    }
+    
     public Aluno(String nome, int CPF, int RA) {
         super(nome, CPF);
         this.RA = RA;
@@ -22,5 +27,12 @@ public class Aluno extends PessoaFisica {
 
     public void setRA(int RA) {
         this.RA = RA;
+    }
+    
+    @Override
+    public void mostrar() {
+        super.mostrar();
+        System.out.println("RA: " +
+                this.getRA());
     }
 }
