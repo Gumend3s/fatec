@@ -3,11 +3,11 @@ import java.time.LocalDate;
 abstract class Funcionario {
     String nome;
     int cpf;
-    int salario;
+    float salario;
     LocalDate datadeadmissao;
 
     
-    public Funcionario(String nome, int cpf, int salario, LocalDate datadeadmissao) {
+    public Funcionario(String nome, int cpf, float salario, LocalDate datadeadmissao) {
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
@@ -28,10 +28,19 @@ abstract class Funcionario {
         this.cpf = cpf;
     }
     
-    public int getSalario() {
+    public float getSalario() {
         return salario;
     }
-    public void setSalario(int salario) {
+
+    public float calcularSalario(float horasExtra,float DescontosCLT,float salarioFixo){
+        float salario;
+
+        salario = horasExtra+ salarioFixo - DescontosCLT;
+
+        return salario;
+    }
+
+    public void setSalario(float salario) {
         this.salario = salario;
     }
     
