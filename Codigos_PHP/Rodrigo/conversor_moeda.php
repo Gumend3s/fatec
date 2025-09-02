@@ -1,18 +1,28 @@
 <?php
+// Cotações das moedas (valores aproximados - em um sistema real, viriam de uma API)
+$cotacoes = [
+    'dolar' => 5.20,
+    'euro' => 5.65,
+    'libra' => 6.45
+];
+
+$nomes_moedas = [
+    'dolar' => 'Dólares Americanos (USD)',
+    'euro' => 'Euros (EUR)',
+    'libra' => 'Libras Esterlinas (GBP)'
+];
+
 if ($_POST) {
     $real = floatval($_POST['real']);
-    $moedaDestino = floatval($_POST['moedaDestino']);
+    $moedaDestino = $_POST['moedaDestino'];
     
-    if (is_numeric($valorReal) && $valorReal > 0 && isset($cotacoes[$moedaDestino])) {
-        $moedaDestino = $real * 5.20;
-        $moedaDestino = $real * 5.65;
-        $moedaDestino = $real * 6.45;
-        
-        
-        
-        $imc_formatado = number_format($imc, 1);
+    if (is_numeric($real) && $real > 0 && isset($cotacoes[$moedaDestino])) {
+        $valorConvertido = $real / $cotacoes[$moedaDestino];
+        $valorConvertido_formatado = number_format($valorConvertido, 2, ',', '.');
+        $real_formatado = number_format($real, 2, ',', '.');
+        $nome_moeda = $nomes_moedas[$moedaDestino];
     } else {
-        $erro = "Por favor, insira valores válidos.";
+        $erro = "Por favor, insira valores válidos e selecione uma moeda.";
     }
 }
 ?>
@@ -22,7 +32,7 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado IMC</title>
+    <title>Resultado da Conversão</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,10 +59,15 @@ if ($_POST) {
             text-align: center;
         }
         
-        .imc {
+        .conversao {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 5px;
+        }
+        
+        .detalhes {
+            color: #666;
+            font-size: 14px;
         }
         
         .erro {
@@ -76,12 +91,13 @@ if ($_POST) {
     </style>
 </head>
 <body>
-    <h1>Resultado do IMC</h1>
+    <h1>Resultado da Conversão</h1>
     
-    <?php if (isset($imc_formatado)): ?>
+    <?php if (isset($valorConvertido_formatado)): ?>
         <div class="resultado">
-            <div class="imc">IMC: <?php echo $imc_formatado; ?></div>
-            <div><?php echo $categoria; ?></div>
+            <div class="conversao">R$ <?php echo $real_formatado; ?> = <?php echo $valorConvertido_formatado; ?></div>
+            <div class="detalhes"><?php echo $nome_moeda; ?></div>
+            <div class="detalhes">Cotação: R$ <?php echo number_format($cotacoes[$moedaDestino], 2, ',', '.'); ?></div>
         </div>
     <?php elseif (isset($erro)): ?>
         <div class="resultado erro">
@@ -90,7 +106,7 @@ if ($_POST) {
     <?php endif; ?>
     
     <div style="text-align: center;">
-        <a href="calculadora_IMC.html" class="voltar">Calcular Novamente</a>
+        <a href="conversor_moeda.html" class="voltar">Converter Novamente</a>
     </div>
 </body>
 </html>

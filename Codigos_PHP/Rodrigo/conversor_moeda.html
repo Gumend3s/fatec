@@ -26,12 +26,13 @@
             margin: 15px 0 5px;
         }
         
-        input {
+        input, select {
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
+            box-sizing: border-box;
         }
         
         button {
@@ -48,30 +49,24 @@
         button:hover {
             background: #555;
         }
-        
-        .resultado {
-            background: white;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 20px;
-            border-left: 3px solid #666;
-        }
-        
-        .imc {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
     <h1>Conversor de Moeda</h1>
     
     <form method="POST" action="conversor_moeda.php">
-        <label>Valor em Real:</label>
-        <input type="number" name="real" step="0.1" required>
+        <label>Valor em Real (R$):</label>
+        <input type="number" name="real" step="0.01" min="0" required>
 
-        <button type="submit">Calcular</button>
+        <label>Converter para:</label>
+        <select name="moedaDestino" required>
+            <option value="">Selecione uma moeda</option>
+            <option value="dolar">Dólar Americano (USD)</option>
+            <option value="euro">Euro (EUR)</option>
+            <option value="libra">Libra Esterlina (GBP)</option>
+        </select>
+
+        <button type="submit">Converter</button>
     </form>
 </body>
 </html>
