@@ -1,15 +1,15 @@
 <?php
-    $p1 = $_POST["p1"];
-    $p2 = $_POST["p1"];
-    $ai1 = $_POST["ai1"];
-    $ai2 = $_POST["ai2"];
+    $p1 = $_POST["p1"] * 0.35;
+    $p2 = $_POST["p2"] * 0.35;
+    $ai1 = $_POST["ai1"] * 0.15;
+    $ai2 = $_POST["ai2"] * 0.15;
     $frequencia = $_POST["frequencia"];
 
-    $media = ((($p1 + $ai1) / 2) + (($p2 + $ai2) / 2)) / 2;
+    $media = number_format($p1 + $ai1 + $p2 + $ai2, 1);
 
     echo '<h2>Média: ' , ($media) , '<br>';
     echo 'Frequência: ' , ($frequencia) , '%<br>';
-    if ($media > 7.5) {
+    if ($media > 6) {
         if ($frequencia > 75) {
             echo "Aluno Aprovado";
         } else {

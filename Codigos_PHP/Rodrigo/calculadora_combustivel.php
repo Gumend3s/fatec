@@ -12,7 +12,7 @@ if ($_POST) {
             $categoria = "Use Gasolina";
         }
         
-        $relacao_formatado = number_format($imc, 1);
+        $relacao_formatado = number_format($relacao, 1);
     } else {
         $erro = "Por favor, insira valores válidos.";
     }
@@ -80,9 +80,9 @@ if ($_POST) {
 <body>
     <h1>Melhor Combustível</h1>
     
-    <?php if (isset($imc_formatado)): ?>
+    <?php if (isset($relacao_formatado)): ?>
         <div class="resultado">
-            <div class="imc">IMC: <?php echo $imc_formatado; ?></div>
+            <div class="combustivel">Combustivel: <?php echo $relacao_formatado; ?></div>
             <div><?php echo $categoria; ?></div>
         </div>
     <?php elseif (isset($erro)): ?>
