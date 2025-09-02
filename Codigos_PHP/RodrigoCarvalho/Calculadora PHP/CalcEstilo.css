@@ -1,0 +1,38 @@
+.corpo{
+    margin: 300px 0 0 0;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.corpo input{
+    font-size: 24px;
+}
+.linebreak{
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.Operandsblock{
+    margin: 50px 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Operandsblock input{
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 24px;
+    margin: 10px;
+}
