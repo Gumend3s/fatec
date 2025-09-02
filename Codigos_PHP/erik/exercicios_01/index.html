@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" id="form">
+        <select name="codigo" id="codigo">
+            <option value="atividade-1.html">Calculo de Combustivel</option>
+            <option value="atividade-2.html">Conversor Moeda</option>
+            <option value="atividade-3.html">Calculo de IMC</option>
+            <option value="atividade-4.html">Calculo de media</option>
+        </select>
+        <button type="submit">Escolher</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("form");
+        const select = document.getElementById("codigo");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const pagina = select.value;
+            window.location.href = pagina; 
+        });
+    </script>
+</body>
+</html>
