@@ -1,16 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>atividade-1</title>
+    <title>Atividade 1 - Cálculo de Combustível</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        input {
+            padding: 12px 15px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4facfe;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4facfe;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00f2fe;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            color: #ff3b3b;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container">
+        <h1>Cálculo de Combustível</h1>
+        <form action="atividade-1.php" method="post" onsubmit="return calcular()">
+            <input type="text" id="alcool" name="alcool" placeholder="Preço do álcool (R$)">
+            <input type="text" id="gasolina" name="gasolina" placeholder="Preço da gasolina (R$)">
+            <button type="submit">Calcular</button>
+            <h4 id="resultado"></h4>
+        </form>
+    </div>
 
-    <input type="text" id="alcool">
-    <input type="text" id="gasolina">
-    <button onclick="">Entra</button>
+    <script>
+        function calcular() {
+            let alcool = document.getElementById("alcool").value;
+            let gasolina = document.getElementById("gasolina").value;
 
-    <script></script>
+            if (isNaN(alcool) || alcool === "" || isNaN(gasolina) || gasolina === "") {
+                document.getElementById("resultado").innerText = "Por favor, insira valores numéricos válidos!";
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
+
 </html>

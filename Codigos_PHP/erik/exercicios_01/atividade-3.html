@@ -1,11 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora de IMC</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        input {
+            padding: 12px 15px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4facfe;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4facfe;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00f2fe;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <h2>Calculadora de IMC</h2>
+
+        <form action="atividade-3.php" method="post" onsubmit="return validar()">
+            <input type="text" id="peso" name="peso" placeholder="Peso (kg)">
+            <input type="text" id="altura" name="altura" placeholder="Altura (m)">
+            <button type="submit">Calcular IMC</button>
+        </form>
+    </div>
+
+    <script>
+        function validar() {
+            let peso = document.getElementById("peso").value;
+            let altura = document.getElementById("altura").value;
+
+            if (isNaN(peso) || peso.trim() === "" || isNaN(altura) || altura.trim() === "") {
+                alert("Por favor, insira valores numéricos válidos!");
+                return false;
+            }
+            if (parseFloat(altura) <= 0 || parseFloat(peso) <= 0) {
+                alert("Peso e altura devem ser maiores que zero!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
+
 </html>
