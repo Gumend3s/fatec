@@ -2,23 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ex_poligonos;
+package ex_disciplina;
 
 /**
  *
  * @author gustavo.oliveira262
  */
-public class Ex_Poligonos {
+public class Ex_Disciplina {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Quadrado q1 = new Quadrado(3);
-        System.out.println("Area quadrado: " + q1.calcularArea());
+        LinguagemProgramacaoI lp1 = new LinguagemProgramacaoI();
+        lp1.setCodigo(123);
+        lp1.setLaboratorio("01");
         
-        TrianguloRetangulo tr1 = new TrianguloRetangulo(3, 4);
-        System.out.println("Hipotenusa: " + tr1.calcularHipotenusa());
+        System.out.println(lp1.obterLaboratorio());
+        System.out.println("Media = " + lp1.calcularMedia());
     }
     
 }
