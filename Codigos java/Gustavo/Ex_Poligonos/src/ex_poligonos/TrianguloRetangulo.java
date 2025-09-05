@@ -13,6 +13,7 @@ public class TrianguloRetangulo extends Triangulo implements Retangulo{
     
     public TrianguloRetangulo(double base, double altura) {
         super(base, altura);
+        setCatetos(base, altura);
     }
     
     @Override
