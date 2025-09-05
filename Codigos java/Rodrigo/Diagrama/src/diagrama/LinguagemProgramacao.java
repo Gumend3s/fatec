@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package diagrama;
 
-/**
- *
- * @author rodrigo.toledo3
- */
-public class LinguagemProgramacao {
-    
+public class LinguagemProgramacao extends Disciplina {
+    private String laboratorio;
+
+    public LinguagemProgramacao(int codigo, String laboratorio){
+        this.laboratorio = laboratorio;
+        super(codigo);
+    }
+
+    public int getLaboratorio(){
+        return laboratorio;
+    }
+
+    public void setLaboratorio(int laboratorio){
+        this.laboratorio = laboratorio;
+    }
 }

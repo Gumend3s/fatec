@@ -1,13 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package diagrama;
 
-/**
- *
- * @author rodrigo.toledo3
- */
-public class Disciplina {
+public abstract class Disciplina {
+    private int codigo;
+
+    public Disciplina(int codigo){
+        this.codigo = codigo;
+    }
+
+    public int getCodigo(){
+        return codigo;
+    }
+
+    public void setCodigo(int codigo){
+        this.codigo = codigo;
+    }
+    public abstract void calcularMedia();
     
 }
