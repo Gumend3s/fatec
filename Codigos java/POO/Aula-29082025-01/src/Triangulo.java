@@ -9,6 +9,11 @@ public class Triangulo extends Poligono{
         this.altura = altura;
         this.triangulo = triangulo;
     }
+    
+    public Triangulo(int numLados, boolean triangulo) {
+        super(numLados);
+        this.triangulo = triangulo;
+    }
 
     public float getBase() {
         return base;

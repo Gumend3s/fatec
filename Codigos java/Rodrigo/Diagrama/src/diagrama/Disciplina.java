@@ -14,6 +14,6 @@ public abstract class Disciplina {
     public void setCodigo(int codigo){
         this.codigo = codigo;
     }
-    public abstract void calcularMedia();
+    public abstract float calcularMedia();
     
 }

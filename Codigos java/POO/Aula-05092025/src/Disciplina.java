@@ -1,0 +1,15 @@
+public abstract  class Disciplina {
+    int codigo;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public abstract double calcularMedia();
+    
+
+}

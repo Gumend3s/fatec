@@ -1,6 +1,9 @@
 package diagrama;
 
-public class LinguagemProgramacao extends Disciplina {
+import javax.swing.JOptionPane;
+
+public class LinguagemProgramacao extends Disciplina iplements Pratica{
+    
     private String laboratorio;
 
     public LinguagemProgramacao(int codigo, String laboratorio){
@@ -14,5 +17,16 @@ public class LinguagemProgramacao extends Disciplina {
 
     public void setLaboratorio(int laboratorio){
         this.laboratorio = laboratorio;
+    }
+    
+    @Override
+    
+    
+    @Override
+    public float calcularMedia(){
+        String entrada;
+        float p1, p2;
+        
+        entrada = JOptionPane.ShowInputDialog();
     }
 }
