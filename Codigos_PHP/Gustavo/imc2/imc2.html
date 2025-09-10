@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+    <label for="peso">Seu Pesol(Kg): </label>
+    <input type="number" id="peso" name="peso" step="0.01" required>
+    <br>
+    <label for="altura">Sua Altura(Metros): </label>
+    <input type="number" id="altura" name="altura" step="0.01" required>
+    <br>
+    <button onclick="calcularIMC()">Calcular</button>
+    <h3 id="resultado"></h3>
+    <script>
+        function calcularIMC() {
+            const peso = document.getElementById("peso").value
+            const altura = document.getElementById("altura").value
+            fetch("imc2.php" , {
+                method: "POST",
+                headers: {"content-type":"application/x-www-form-urlencoded"},
+                body: `peso=${peso}&altura=${altura}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("resultado").innerHTML = data;
+            });
+        }
+    </script>
+</body>
+</html>
