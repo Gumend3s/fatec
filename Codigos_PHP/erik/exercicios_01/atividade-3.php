@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-        <h2>Resultado</h2>
+        <h3>Resultado</h3>
         <p>Peso informado: <?php echo number_format($peso,2,',','.'); ?> kg</p>
         <p>Altura informada: <?php echo number_format($altura,2,',','.'); ?> m</p>
         <p>IMC calculado: <?php echo number_format($imc,2,',','.'); ?></p>
