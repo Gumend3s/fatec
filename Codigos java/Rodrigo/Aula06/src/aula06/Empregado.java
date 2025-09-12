@@ -51,6 +51,10 @@ public class Empregado {
                 this.getDepartamento() + ")\nR$ " +
                 this.getSalario() + "\n=============");
     }
+    public static void mostrarEmpregado(Empregado e){
+        e.mostrarEmpregado();
+        
+    }
     
     public static void totalEmpregado(){
         System.out.println("Total de empregados: " + (proxCod - 100));

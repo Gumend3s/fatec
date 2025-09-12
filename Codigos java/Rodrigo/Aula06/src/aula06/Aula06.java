@@ -16,11 +16,11 @@ public class Aula06 {
         e3.setDepartamento("R.H.");
         e3.setSalario(10000);
         
+        Empregado.totalEmpregado();
+        
         e1.mostrarEmpregado();
         e2.mostrarEmpregado();
         e3.mostrarEmpregado();
-        
-        Empregado.totalEmpregado();
     }
     
 }
