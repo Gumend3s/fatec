@@ -3,14 +3,14 @@
         public $ra;
         public function setRA($r){
             $this->ra = $r;
-            echo "Ra: $this->ra";
+            echo "Ra: $this->ra</br>";
         }
     }
     class graduacao extends aluno{
         protected $tcc;
         public function setTCC($t){
             $this->tcc = $t;
-            echo "TCC: $this->tcc";
+            echo "TCC: $this->tcc</br>";
         }
     }
     $a = new aluno();
