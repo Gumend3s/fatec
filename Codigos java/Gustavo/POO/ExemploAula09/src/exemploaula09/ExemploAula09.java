@@ -2,19 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package empregado;
+package exemploaula09;
 
 /**
  *
  * @author gustavo.oliveira262
  */
-public class Empregado {
+public class ExemploAula09 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Dado d1 = new Dado();
+        
+        d1.setAposta(3);
+        d1.jogaJogo();
+        d1.mostraResultado();
+        
     }
     
 }
