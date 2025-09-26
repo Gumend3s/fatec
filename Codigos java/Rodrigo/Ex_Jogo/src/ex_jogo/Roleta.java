@@ -2,11 +2,11 @@ package ex_jogo;
 
 import java.util.Random;
 
-public class Dado extends jogo{
+public class Roleta extends jogo{
     
     @Override
     public void setAposta(int aposta){
-        if(aposta> 6 || aposta < 1){
+        if(aposta> 36 || aposta < 0){
             System.out.println("Valor invalido");
         } else{
             super.setAposta(aposta);
@@ -14,16 +14,11 @@ public class Dado extends jogo{
     }
     
     @Override
-    public void setResultado(int resultado) {
-        System.out.println("Sei o que você esta fazendo");
-    }
-    
-    @Override
     public void jogaJoga(){
         int resultado;
         
         Random dado = new Random();
-        resultado = dado.nextInt(6) + 1;
+        resultado = dado.nextInt(36);
         
         super.setResultado(resultado);
     }

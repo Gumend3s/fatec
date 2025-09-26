@@ -22,8 +22,8 @@ public abstract class jogo {
     public abstract void jogaJoga();
     
     public void mostraResultado(){
-        System.out.println("Aposta: " + this.resultado);
-        System.out.println("Resultado: " + this.aposta);
+        System.out.println("Aposta: " + this.aposta);
+        System.out.println("Resultado: " + this.resultado);
         if(this.aposta == this.resultado){
             System.out.println("Meus parabens, a proxima voce tambem consegue!!!!");
         } else {
