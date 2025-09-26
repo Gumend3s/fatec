@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -8,9 +9,11 @@ public class Cliente {
     private List <Conta> contas;
     private Banco banco;
 
-    public Cliente(String nome, String cpf,Banco banco) {
+
+    public Cliente(String nome, String cpf, Banco banco) {
         this.nome = nome;
         this.cpf = cpf;
+        
         this.banco = banco;
     }
     public String getNome() {
@@ -39,10 +42,21 @@ public class Cliente {
     }
 
     public void criar( double saldo, int numeroConta){
-        Conta novConta = new Conta(numeroConta, saldo, this.cpf);
 
-        this.contas.add(novConta);
-        JOptionPane.showMessageDialog(null,"A conta foi criada com o saldo "+ saldo + );
+        try {
+            Conta novConta = new Conta(numeroConta, saldo, this.cpf);
+
+            this.contas.add(novConta);
+            JOptionPane.showMessageDialog(null, "A conta foi criada com o saldo " + saldo );
+        } catch (Exception e) {
+            this.contas = new ArrayList<>();
+
+            Conta novConta = new Conta(numeroConta, saldo, this.cpf);
+
+            this.contas.add(novConta);
+            JOptionPane.showMessageDialog(null, "A conta foi criada com o saldo " + saldo );
+        }
+
 
     }
 
