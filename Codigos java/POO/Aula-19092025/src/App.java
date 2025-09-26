@@ -7,7 +7,8 @@ public class App {
 
 
 
-        erik.criar(5000.78, 82565487);
+        erik.criar(5000.78, 82565487, brasil);
+        erik.criar(505100.78, 82216456,brasil);
         
         
     }

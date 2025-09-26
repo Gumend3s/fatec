@@ -1,11 +1,13 @@
 import javax.swing.JOptionPane;
 
-public class Conta {
+public class Conta extends Cliente{
     private int numeroConta;
     private double saldo;
     private String titular;
 
-    public Conta(int numeroConta, double saldo, String titular) {
+
+    public Conta( int numeroConta, double saldo, String titular, Banco banco) {
+        super(banco);
         this.numeroConta = numeroConta;
         this.saldo = saldo;
         this.titular = titular;

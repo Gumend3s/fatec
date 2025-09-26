@@ -13,7 +13,10 @@ public class Cliente {
     public Cliente(String nome, String cpf, Banco banco) {
         this.nome = nome;
         this.cpf = cpf;
-        
+        this.banco = banco;
+    }
+    
+    public Cliente( Banco banco) {
         this.banco = banco;
     }
     public String getNome() {
@@ -31,9 +34,6 @@ public class Cliente {
     public List<Conta> getContas() {
         return contas;
     }
-    public void setContas(List<Conta> contas) {
-        this.contas = contas;
-    }
     public Banco getBanco() {
         return banco;
     }
@@ -41,20 +41,22 @@ public class Cliente {
         this.banco = banco;
     }
 
-    public void criar( double saldo, int numeroConta){
+    public void criar( double saldo, int numeroConta, Banco banco){
 
         try {
-            Conta novConta = new Conta(numeroConta, saldo, this.cpf);
+            Conta novConta = new Conta(numeroConta, saldo, this.cpf, this.banco);
 
             this.contas.add(novConta);
-            JOptionPane.showMessageDialog(null, "A conta foi criada com o saldo " + saldo );
+            JOptionPane.showMessageDialog(null, "A sua nova conta foi criada com o saldo " + saldo +" com o numero "+ numeroConta+ "no banco "+ banco );
         } catch (Exception e) {
             this.contas = new ArrayList<>();
 
-            Conta novConta = new Conta(numeroConta, saldo, this.cpf);
+            Conta novConta = new Conta(numeroConta, saldo, this.cpf, this.banco);
 
             this.contas.add(novConta);
-            JOptionPane.showMessageDialog(null, "A conta foi criada com o saldo " + saldo );
+            JOptionPane.showMessageDialog(null,"Vimos que você é novo aqui?!!");
+            JOptionPane.showMessageDialog(null, "A sua primeira conta foi criada com o saldo " + saldo + " e com o numero " + numeroConta
+                    + "no banco " + banco );
         }
 
 
