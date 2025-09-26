@@ -2,30 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package exemploaula09;
+package ex_1;
 
 /**
  *
  * @author gustavo.oliveira262
  */
-public class ExemploAula09 {
+public class Ex_1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Dado d1 = new Dado();
+        Aluno a1 = new Aluno("Gustavo", 123, 7, 6, 9);
         
-        d1.setAposta(3);
-        d1.setResultado(3);
-        d1.jogaJogo();
-        d1.mostraResultado();
-        
-        Roleta r1 = new Roleta();
-        
-        r1.setAposta(25);
-        r1.jogaJogo();
-        r1.mostraResultado();
+        a1.media();
     }
     
 }
