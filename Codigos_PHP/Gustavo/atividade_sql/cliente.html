@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Curso de PHP com MySQL</title>
+    <link rel="stylesheet" href="cliente.css">
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<body>
+    <form name="form1" method="POST" action="cliente.php">
+        <p>Nome:<br>
+            <input type="text" name="nome" id="nome" size="30" maxlength="30" required>
+        </p>
+        <p>Data de nascimento:<br>
+            <input type="date" name="nascimento" id="nascimento" required>
+        </p>
+        <p>CPF:<br>
+            <input type="text" name="cpf" id="cpf" required>
+        </p>
+        <p>RG:<br>
+            <input type="text" name="rg" id="rg" required>
+        </p>
+        <p>Estado Civil:<br>
+            <select name="civil" id="civil">
+                <option value="vazio"> </option>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="divociado">Divorciado(a)</option>
+                <option value="viuvo">Víuvo(a)</option>
+                <option value="separado">Separado(a) Judicialmente</option>
+            </select>
+        </p><br>
+        <h3>Endereço</h3>
+        <p>Rua:<br>
+            <span class="row">
+                <input type="text" name="rua" id="rua" required>
+                <input type="number" name="numero" id="numero" size="5" maxlength="5" required>
+            </span>
+        </p>
+        <p>Estado:<br>
+            <input type="text" name="estado" id="estado" size="2" maxlength="2" required>
+        </p>
+        <p>Cidade:<br>
+            <input type="text" name="cidade" id="cidade" required>
+        </p>
+        <p>Bairro:<br>
+            <input type="text" name="bairro" id="bairro" required>
+        </p>
+        <p>CEP:<br> 
+            <input type="text" name="cep" id="cep" size="9" maxlength="9" required>
+        </p><br>
+        <p>Telefone Fixo:<br>
+            <input type="text" name="telefone" id="telefone">
+        </p>
+        <p>Celular:<br>
+            <input type="text" name="celular" id="celular">
+        </p>
+        <p>E-mail:<br>
+            <input type="email" name="email" id="email" required>
+        </p>
+        <p>Profissão:<br>
+            <input type="text" name="profissao" id="profissao" required>
+        </p>
+        <p><input type="submit" value="Enviar"></p>
+        <input type='hidden' name='btnOK' value='1'>
+    </form>
+</body>
+<html>
