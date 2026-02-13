@@ -1,0 +1,11 @@
+{
+"name": "ola-mundo",
+"version": "1.0.0",
+"description": "Minha primeira aplicação Node.js",
+"main": "server.js",
+"scripts": {
+"start": "node server.js"
+},
+"keywords": ["nodejs", "web", "hello-world"],
+"author": "Gustavo"
+}
