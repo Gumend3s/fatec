@@ -1,4 +1,4 @@
-class SpecialAccount: BankAccount() {
+class SpecialAccount: BankAccount {
     var limit: Double = 0.0
         set(value) {
             if (value > 0.0)
@@ -17,4 +17,7 @@ class SpecialAccount: BankAccount() {
         }
     }
 
+    constructor(customer: String, account: Int, balance: Double, limit: Double) : super(customer, account, balance) {
+        this.limit = limit
+    }
 }

@@ -39,4 +39,10 @@ open class BankAccount {
         }
         balance += value
     }
+
+    constructor(customer: String, account: Int, balance: Double) {
+        this.customer = customer
+        this.account = account
+        this.balance = balance
+    }
 }
